@@ -1,21 +1,20 @@
 package com.example.wafflely
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
-import android.os.Bundle
-import android.widget.DatePicker
+import android.view.View
 import android.widget.RemoteViews
-import java.time.LocalDate
-import java.util.Calendar
+import android.widget.EditText
+import android.widget.TextView
+import com.example.wafflely.databinding.TodoWidgetBinding
 
 
 /**
  * Implementation of App Widget functionality.
  */
-class NewAppWidget : AppWidgetProvider() {
+class TodoWidget : AppWidgetProvider() {
+    private lateinit var binding: TodoWidgetBinding
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
@@ -25,6 +24,18 @@ class NewAppWidget : AppWidgetProvider() {
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
         }
+
+//        var todo_edit:EditText = binding.todoEdit
+        var todo_text:TextView = binding.todoText
+        var todo_button = binding.todoButton
+        todo_text.visibility = View.INVISIBLE
+
+        todo_button.setOnClickListener(View.OnClickListener {
+//            var text:String = todo_edit.text.toString()
+//            todo_text.setText(text)
+//            todo_edit.visibility = View.INVISIBLE
+            todo_text.visibility = View.VISIBLE
+        })
     }
 
     override fun onEnabled(context: Context) {
@@ -41,10 +52,10 @@ internal fun updateAppWidget(
     appWidgetManager: AppWidgetManager,
     appWidgetId: Int
 ) {
-//    val widgetText = context.getString(R.string.appwidget_text)
-    // Construct the RemoteViews object
-    val views = RemoteViews(context.packageName, R.layout.new_app_widget)
-//    views.setTextViewText(R.id.appwidget_text, widgetText)
+    val widgetText = ""
+//     Construct the RemoteViews object
+    val views = RemoteViews(context.packageName, R.layout.todo_widget)
+    views.setTextViewText(R.id.appwidget_text, widgetText)
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)

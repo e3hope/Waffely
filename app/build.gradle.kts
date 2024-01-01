@@ -7,6 +7,9 @@ android {
     namespace = "com.example.wafflely"
     compileSdk = 33
 
+    viewBinding(){
+        enable=true
+    }
     defaultConfig {
         applicationId = "com.example.wafflely"
         minSdk = 33
@@ -67,4 +70,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // dataroom
+    implementation("androidx.room:room-runtime:2.4.3")
+    annotationProcessor("androidx.room:room-compiler:2.4.3")
+//    kapt("androidx.room:room-compiler:2.4.3")
+    implementation("androidx.room:room-ktx:2.4.3")
 }
