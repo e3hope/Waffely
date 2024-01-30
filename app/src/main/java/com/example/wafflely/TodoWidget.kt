@@ -24,18 +24,6 @@ class TodoWidget : AppWidgetProvider() {
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
         }
-
-//        var todo_edit:EditText = binding.todoEdit
-        var todo_text:TextView = binding.todoText
-        var todo_button = binding.todoButton
-        todo_text.visibility = View.INVISIBLE
-
-        todo_button.setOnClickListener(View.OnClickListener {
-//            var text:String = todo_edit.text.toString()
-//            todo_text.setText(text)
-//            todo_edit.visibility = View.INVISIBLE
-            todo_text.visibility = View.VISIBLE
-        })
     }
 
     override fun onEnabled(context: Context) {
@@ -55,7 +43,7 @@ internal fun updateAppWidget(
     val widgetText = ""
 //     Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.todo_widget)
-    views.setTextViewText(R.id.appwidget_text, widgetText)
+//    views.setTextViewText(R.id.appwidget_text, widgetText)
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)

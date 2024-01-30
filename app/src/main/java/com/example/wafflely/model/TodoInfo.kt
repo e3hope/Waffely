@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity
 class TodoInfo {
-    var content: String = ""
-    var is_succes: Boolean = true
-    var insert_date: String = ""
+    var todoContent: String = ""
+//    var isSucces: Boolean = true
+    var insertDate: String = ""
 
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

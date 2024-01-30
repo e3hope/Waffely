@@ -8,7 +8,7 @@ import com.example.wafflely.database.TodoDao
 
 @Database(entities = [TodoInfo::class], version = 1)
 abstract class TodoDatabase: RoomDatabase() {
-    abstract fun goalDao(): TodoDao
+    abstract fun todoDao(): TodoDao
 
     companion object{
         private var instance: TodoDatabase? = null
@@ -19,7 +19,7 @@ abstract class TodoDatabase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         TodoDatabase::class.java,
-                        "goal-database"
+                        "todo-database"
                     ).build()
                 }
             }

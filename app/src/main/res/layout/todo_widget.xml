@@ -90,32 +90,11 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-<!--            <EditText-->
-<!--                android:id="@+id/todo_edit"-->
-<!--                android:layout_width="347dp"-->
-<!--                android:layout_height="50dp"/>-->
-            <TextView
+           <TextView
                 android:id="@+id/todo_text"
-                android:layout_width="347dp"
-                android:layout_height="50dp"/>
-
-            <Button
-                android:id="@+id/todo_button"
-                android:layout_width="30dp"
-                android:layout_height="match_parent" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
     </LinearLayout>
-    <TextView
-    android:id="@+id/appwidget_text"
-    style="@style/Widget.Wafflely.AppWidget.InnerView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
-    android:layout_margin="8dp"
-    android:contentDescription="@string/appwidget_text"
-    android:text="@string/appwidget_text"
-    android:textSize="0sp"
-    android:textStyle="bold|italic" />
 </LinearLayout>
